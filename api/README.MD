@@ -1,4 +1,5 @@
 # GFast-V3
+gf23 gen service -s ./internal/app/skdj/logic -d ./internal/app/skdj/service
 gf23 build ./main.go -n admin-http -a amd64 -s linux -p ./bin -version http
 
 

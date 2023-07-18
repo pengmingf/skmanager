@@ -11,6 +11,7 @@ import (
 	"context"
 
 	"github.com/gogf/gf/v2/net/ghttp"
+	"github.com/tiger1103/gfast/v3/internal/app/skdj/controller"
 	"github.com/tiger1103/gfast/v3/internal/app/system/service"
 	"github.com/tiger1103/gfast/v3/library/libRouter"
 )
@@ -27,7 +28,9 @@ func (router *Router) BindController(ctx context.Context, group *ghttp.RouterGro
 		group.Middleware(service.Middleware().Ctx, service.Middleware().Auth)
 		// 后台操作日志记录
 		group.Hook("/*", ghttp.HookAfterOutput, service.OperateLog().OperationLog)
-		group.Bind()
+		group.Bind(
+			controller.Service,
+		)
 		// 自动绑定定义的控制器
 		if err := libRouter.RouterAutoBind(ctx, router, group); err != nil {
 			panic(err)
