@@ -1,0 +1,9 @@
+# CLI.
+gfcli:
+  gen:
+    dao:
+      - link:            "mysql:ympj:ympj_pmf@tcp(127.0.0.1:3306)/ympj"
+        removePrefix:    "gf_"
+        descriptionTag:  true
+        noModelComment:  true
+        path: "./internal/app/system"
