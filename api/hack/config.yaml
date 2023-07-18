@@ -6,4 +6,4 @@ gfcli:
         removePrefix:    "gf_"
         descriptionTag:  true
         noModelComment:  true
-        path: "./internal/app/system"
+        path: "./internal/app/skdj"
